@@ -1,0 +1,17 @@
+<h1>People#index</h1>
+<p>Find me in app/views/people/index.html.erb</p>
+
+
+<div ng-app="app">
+  <div ng-controller="stuffCtrl" ng-init="setup()">
+    <p>{{ 1 + 1 }}</p>
+    <p><input ng-model="filterName"></p>
+    <p>{{ message }}</p>
+    <div ng-repeat="person in persons | filter: {name: filterName} | orderBy: 'name':sortDesc">
+      <p>This is the person: {{ person.name }}</p>
+    </div>
+    <button ng-click="toggleDesc()">Sort the persons</button>
+    <input ng-model="message">
+
+  </div>
+</div>
